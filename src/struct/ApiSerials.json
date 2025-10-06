@@ -1,0 +1,114 @@
+{
+    "blocks": [
+      {
+        "label": "Port settings",
+        "fields": [
+          {
+            "type": "select",
+            "model": "path",
+            "label": "Path",
+            "default": "",
+            "update": "/serial/path",
+            "options": { },
+            "description": "COM1, COM2... in windows"
+          },
+          {
+            "type": "select",
+            "model": "baudRate",
+            "label": "BaudRate",
+            "default": "9600",
+            "options": {
+              "2400": 2400,
+              "4800": 4800,
+              "9600": 9600,
+              "14400": 14400,
+              "19200": 19200,
+              "38400": 38400,
+              "57600": 57600,
+              "115200": 115200,
+              "128000": 128000,
+              "256000": 256000
+            },
+            "description": "Serial port speed"
+          },
+          {
+              "type": "select",
+              "model": "dataBits",
+              "label": "Data Bits",
+              "default": "8",
+              "options": {
+                "8": 8,
+                "7": 7,
+                "6": 6,
+                "5": 5
+              },
+              "description": "Count of data bits"
+          },
+          {
+              "type": "select",
+              "model": "stopBits",
+              "label": "Stop Bits",
+              "default": "1",
+              "options": {
+                "1": 1,
+                "2": 2
+              },
+              "description": "Count of stop bits"
+          },
+          {
+              "type": "select",
+              "model": "parity",
+              "label": "Party",
+              "default": "none",
+              "options": {"none":"none", "even":"even", "odd":"odd"},
+              "description": "Party option"
+          },
+          {
+            "type": "select",
+            "model": "marker",
+            "label": "Marker",
+            "default": "",
+            "update": "/serials/markers",
+            "options": { },
+            "description": "Marker (see struct in /device/vgranite/struct)"
+          },
+          {
+              "type": "textarea",
+              "model": "description",
+              "label": "Description",
+              "default": "",
+              "description": ""
+          }
+        ]
+      },
+      {
+        "label": "Additional",
+        "fields": [
+          {
+            "type": "checkbox",
+            "model": "exceptRequest",
+            "label": "Except request",
+            "default": false,
+            "description": "Except request from response"
+          },
+          {
+            "type": "checkbox",
+            "model": "delayData",
+            "label": "Delay Data",
+            "default": false,
+            "description": "Delay sending data after the first response while waiting for the rest of the response"
+          },
+          {
+            "type": "number",
+            "model": "delayTimeout",
+            "label": "Delay Timeout",
+            "default": 300,
+            "min": 1,
+            "max": 5000,
+            "description": "Response delay timeout (min = 1, max = 5000)"
+          }
+        ]
+      }
+    ]
+  }
+  

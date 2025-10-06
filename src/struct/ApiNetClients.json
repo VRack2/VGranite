@@ -1,0 +1,33 @@
+{
+    "blocks": [
+      {
+        "label": "Client settings",
+        "fields": [
+          {
+            "type": "text",
+            "model": "path",
+            "label": "Path",
+            "default": "127.0.0.1:4001",
+            "description": "Host for connect"
+          },
+          {
+            "type": "select",
+            "model": "marker",
+            "label": "Marker",
+            "default": "",
+            "update": "/net/clients/markers",
+            "options": { },
+            "description": "Marker (see struct in /device/vgranite/struct)"
+          },
+          {
+              "type": "textarea",
+              "model": "description",
+              "label": "Description",
+              "default": "",
+              "description": ""
+          }
+        ]
+      }
+    ]
+  }
+  
