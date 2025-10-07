@@ -47,7 +47,7 @@
       "type": "vgranite.HttpStatic",
       "options": {
         "port": 3999,
-        "static": "./apidoc"
+        "static": "./devices/vgranite/apidoc"
       }
     },
     {
