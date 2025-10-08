@@ -2,7 +2,7 @@
 
 # VGgranite
 
-Простое приложение для создания туннелей Socket -> Serial. Приложение имеет веб-интерфейс управления.
+Простое приложение - сервис для создания туннелей Socket -> Serial. Приложение имеет веб-интерфейс управления.
 
 Основные возможности:
 
@@ -38,7 +38,18 @@
     mkdir -p devices storage structure ./devices/vgranite
     ```
 4. Cкачайте [последний релиз](https://github.com/VRack2/VGranite/releases)
+    - **Если не установлены unzip и wget**
+    ```bash
+    sudo apt install wget unzip
+    ```
+    ```bash
+    wget "https://github.com/VRack2/VGranite/releases/download/2.0.0/vgranite-release-2.0.0.zip"
+    ```
 5. Распакуйте содержимое архива в `/opt/vrack2-service/devices/vgranite`
+    ```bash
+    sudo unzip vgranite-release-2.0.0.zip -d /opt/vrack2-service/devices/vgranite/
+    rm vgranite-release-2.0.0.zip
+    ```
 6. Установите зависимости VGranite:
     ```bash
     cd /opt/vrack2-service/devices/vgranite
@@ -76,7 +87,7 @@ systemctl start vgranite
 ## РЕШЕНИЕ ПРОБЛЕМ
 
 1. **Permission denied: '/dev/ttyUSB0'** - Возможно, попробуйте использовать команду `sudo chmod a+rw /dev/ttyUSB0`
-2. Иногда при добавлении соединения происходит ошибка и разлогинивание, но потом все работает хорошо. Пока не смог исправить причину, из-за того что не могу ее воспроизвести.
+2. Иногда при добавлении соединения происходит ошибка и разлогинивание, но потом все работает хорошо. Пока не смог исправить причину - не могу ее воспроизвести.
 
 
 <!-- СБОРКА
